@@ -1,0 +1,59 @@
+https://gtbuses.herokuapp.com/
+
+
+GT Buses API Documentation
+
+NextBus wrapper for Georgia Tech buses.
+Requests
+
+    Endpoints
+        /routeConfig - configuration for all routes, including stops and paths.
+        /locations/{route_id} - bus locations for a specific route.
+        /predictions/{route_id} - bus prediction times for a specific route.
+        /multiPredictions - bus prediction times for specific stops.
+        /schedule/{route_id} - bus schedule for a specific route.
+        /messages - general messages as well as messages specific to each route.
+    Examples
+        https://gtbuses.herokuapp.com/routeConfig
+        https://gtbuses.herokuapp.com/locations/blue
+        https://gtbuses.herokuapp.com/predictions/blue
+        https://gtbuses.herokuapp.com/multiPredictions?stops=blue|cherfers
+        https://gtbuses.herokuapp.com/schedule/blue
+        https://gtbuses.herokuapp.com/messages
+
+Responses
+
+    Format
+        All responses are returned in XML format.
+        For detailed info on the response format, click here.
+    Status Codes
+        200 OK - request was successfully returned.
+        400 Bad Request - invalid request data.
+        404 Not Found - requested data not found.
+    Example
+
+    > GET /locations/blue HTTP/1.1
+    > Host: gtbuses.herokuapp.com
+    > Cache-Control: no-cache
+    >
+    < HTTP/1.1 200 OK
+    < Connection: keep-alive
+    < Server: gunicorn/18.0
+    < Date: Fri, 07 Nov 2014 22:41:30 GMT
+    < Content-Type: text/xml; charset=utf-8
+    < Content-Length: 350
+    < Via: 1.1 vegur
+    <
+
+    <?xml version="1.0" encoding="utf-8" ?>
+    <body copyright="All data copyright Georgia Tech Campus 2014.">
+        <vehicle id="434" routeTag="blue" dirTag="naveapts" lat="33.769146" lon="-84.392123" secsSinceReport="5" predictable="true" heading="357" speedKmHr="8"/>
+        <lastTime time="1415399943783"/>
+        <keyForNextTime value="1606125878530" />
+    </body>
+
+Back to top
+
+Tweet @iMinichrispy or email me for any questions/suggestions/comments.
+
+Copyright © 2015 Alex Perez.
