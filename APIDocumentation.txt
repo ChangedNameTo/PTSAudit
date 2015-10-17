@@ -57,3 +57,8 @@ Back to top
 Tweet @iMinichrispy or email me for any questions/suggestions/comments.
 
 Copyright © 2015 Alex Perez.
+
+
+SQL and PHP Information
+
+http://www.sitepoint.com/mysql-3-getting-started-php/
