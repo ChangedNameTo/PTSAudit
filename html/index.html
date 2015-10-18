@@ -260,14 +260,9 @@
 
     <!-- Main row -->
     <h1>
-        Flot Charts
+        Live Stream
         <!--<small>preview sample</small>-->
     </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Charts</a></li>
-        <li class="active">Flot</li>
-    </ol>
     <!-- Charts -->
     <div class="row">
         <div class="col-xs-12">
@@ -276,7 +271,7 @@
                 <div class="box-header with-border">
                     <i class="fa fa-bar-chart-o"></i>
 
-                    <h3 class="box-title">Interactive Area Chart</h3>
+                    <h3 class="box-title">Bus Data</h3>
 
                     <div class="box-tools pull-right">
                         Real time
@@ -331,6 +326,8 @@
 <script src="plugins/flot/jquery.flot.pie.min.js"></script>
 <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
 <script src="plugins/flot/jquery.flot.categories.min.js"></script>
+<!-- FLOT AXISLABEL PLUGIN - Used to make axis labels -->
+<script src = "plugins/flot/jquery.flot.axislabels.js"></script>
 <!-- Page script -->
 <script>
     $(function () {
@@ -370,6 +367,21 @@
 
             return res;
         }
+        var options = {
+            axisLabels: {
+                show: true
+            },
+            xaxes: [{
+                axisLabel: 'foo',
+            }],
+            yaxes: [{
+                position: 'left',
+                axisLabel: 'bar',
+            }, {
+                position: 'right',
+                axisLabel: 'bleem'
+            }]
+        };
 
         var interactive_plot = $.plot("#interactive", [getRandomData()], {
             grid: {
@@ -388,20 +400,20 @@
             yaxis: {
                 min: 0,
                 max: 100,
-                show: true
+                show: true,
             },
             xaxis: {
                 show: true
             }
         });
 
-        var updateInterval = 500; //Fetch data ever x milliseconds
+        var updateInterval = 500; //Fetch data every x milliseconds
         var realtime = "on"; //If == to on then fetch data every x seconds. else stop fetching
         function update() {
 
             interactive_plot.setData([getRandomData()]);
 
-            // Since the axes don't change, we don't need to call plot.setupGrid()
+            // Since the axes doesn't change, we don't need to call plot.setupGrid()
             interactive_plot.draw();
             if (realtime === "on")
             setTimeout(update, updateInterval);
