@@ -1,0 +1,202 @@
+mysql> select * from rambler;
++---------------+-----------+--------------+----------------+
+| epochKey      | busNumber | nextStop     | timeToNextStop |
++---------------+-----------+--------------+----------------+
+| 1445146396114 |       404 | tech4th_ob   |             12 |
+| 1445146422255 |       404 | cloucomm     |            306 |
+| 1445146436560 |       404 | cloucomm     |            295 |
+| 1445146496440 |       404 | cloucomm     |            236 |
+| 1445146559507 |       404 | cloucomm     |            175 |
+| 1445146612591 |       404 | cloucomm     |            116 |
+| 1445146679368 |       404 | cloucomm     |             57 |
+| 1445146733027 |       404 | tech4th_ib   |             68 |
+| 1445146797423 |       404 | tech4th_ib   |             67 |
+| 1445146851330 |       404 | tech4th_ib   |             69 |
+| 1445146920580 |       404 | tech4th_ib   |              5 |
+| 1445146976971 |       404 | technorth_ib |             46 |
+| 1445147029062 |       404 | technorth_ib |              9 |
+| 1445147100996 |       404 | tranhub_f    |             82 |
+| 1445147144559 |       404 | tranhub_f    |              1 |
+| 1445147217987 |       404 | creccent_ib  |             59 |
+| 1445147277480 |       404 | creccent_ib  |             31 |
+| 1445147334070 |       404 | fitthall_a   |             59 |
+| 1445147396141 |       404 | 8thhemp      |            307 |
+| 1445147459617 |       404 | 8thhemp      |            247 |
+| 1445147518289 |       404 | 8thhemp      |            188 |
+| 1445147577278 |       404 | 8thhemp      |            127 |
+| 1445147637655 |       404 | 8thhemp      |             67 |
+| 1445147697286 |       404 | 8thhemp      |              3 |
+| 1445147758506 |       404 | creccent_ob  |             26 |
+| 1445147815046 |       404 | tranhub_b    |             66 |
+| 1445147873662 |       404 | tranhub_b    |             13 |
+| 1445147935316 |       404 | technorth_ob |             83 |
+| 1445147994619 |       404 | technorth_ob |             19 |
+| 1445148049776 |       404 | tech4th_ob   |             35 |
+| 1445148119832 |       404 | cloucomm     |            415 |
+| 1445148169648 |       404 | cloucomm     |            355 |
+| 1445148295463 |       404 | cloucomm     |            235 |
+| 1445148359635 |       404 | cloucomm     |            175 |
+| 1445148410163 |       404 | cloucomm     |            115 |
+| 1445148476989 |       404 | cloucomm     |           1856 |
+| 1445148530612 |       404 | tech4th_ib   |             48 |
+| 1445148598374 |       404 | tech4th_ib   |              2 |
+| 1445148657401 |       404 | technorth_ib |             30 |
+| 1445148711708 |       404 | tranhub_f    |             95 |
+| 1445148771571 |       404 | creccent_ib  |             73 |
+| 1445148831537 |       404 | creccent_ib  |             54 |
+| 1445148891738 |       404 | creccent_ib  |              4 |
+| 1445148956721 |       404 | fitthall_a   |             52 |
+| 1445149018220 |       404 | 8thhemp      |            487 |
+| 1445149077400 |       404 | 8thhemp      |            427 |
+| 1445149132705 |       404 | 8thhemp      |            368 |
+| 1445149193342 |       404 | 8thhemp      |            307 |
+| 1445149260353 |       404 | 8thhemp      |            247 |
+| 1445149318668 |       404 | 8thhemp      |            187 |
+| 1445149368570 |       404 | 8thhemp      |            129 |
+| 1445149438093 |       404 | 8thhemp      |             20 |
+| 1445149552785 |       404 | tranhub_b    |             76 |
+| 1445149613828 |       404 | tranhub_b    |             43 |
+| 1445149673507 |       404 | technorth_ob |            112 |
+| 1445149738294 |       404 | technorth_ob |             88 |
+| 1445149789360 |       404 | technorth_ob |             92 |
+| 1445149855248 |       404 | technorth_ob |             85 |
+| 1445149909828 |       404 | technorth_ob |             34 |
+| 1445149980232 |       404 | technorth_ob |             11 |
+| 1445150040728 |       404 | technorth_ob |              0 |
+| 1445150100031 |       404 | cloucomm     |            236 |
+| 1445150161376 |       404 | cloucomm     |            177 |
+| 1445150214950 |       404 | cloucomm     |            116 |
+| 1445150281115 |       404 | cloucomm     |             55 |
+| 1445150326811 |       404 | tech4th_ib   |             66 |
+| 1445150385767 |       404 | tech4th_ib   |             72 |
+| 1445150455887 |       404 | tech4th_ib   |             67 |
+| 1445150519626 |       404 | tech4th_ib   |             71 |
+| 1445150577176 |       404 | tech4th_ib   |             71 |
+| 1445150636240 |       404 | tech4th_ib   |             65 |
+| 1445150696091 |       404 | tech4th_ib   |             65 |
+| 1445150756896 |       404 | tech4th_ib   |             71 |
+| 1445150817920 |       404 | tech4th_ib   |             71 |
+| 1445150875257 |       404 | tech4th_ib   |              0 |
+| 1445150937979 |       404 | technorth_ib |             44 |
+| 1445151000821 |       404 | tranhub_f    |            116 |
+| 1445151060087 |       404 | tranhub_f    |              0 |
+| 1445151114975 |       404 | creccent_ib  |             56 |
+| 1445151175345 |       404 | fitthall_a   |             74 |
+| 1445151236370 |       404 | fitthall_a   |             25 |
+| 1445151299219 |       404 | 8thhemp      |             63 |
+| 1445151355805 |       404 | 8thhemp      |             19 |
++---------------+-----------+--------------+----------------+
+83 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+root@ptsaudit:/home/PTSAudit# mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 454
+Server version: 5.5.44-0ubuntu0.14.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use rambler;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> use rambler;
+Database changed
+mysql> select * from rambler;
++---------------+-----------+--------------+----------------+
+| epochKey      | busNumber | nextStop     | timeToNextStop |
++---------------+-----------+--------------+----------------+
+| 1445146396114 |       404 | tech4th_ob   |             12 |
+| 1445146422255 |       404 | cloucomm     |            306 |
+| 1445146436560 |       404 | cloucomm     |            295 |
+| 1445146496440 |       404 | cloucomm     |            236 |
+| 1445146559507 |       404 | cloucomm     |            175 |
+| 1445146612591 |       404 | cloucomm     |            116 |
+| 1445146679368 |       404 | cloucomm     |             57 |
+| 1445146733027 |       404 | tech4th_ib   |             68 |
+| 1445146797423 |       404 | tech4th_ib   |             67 |
+| 1445146851330 |       404 | tech4th_ib   |             69 |
+| 1445146920580 |       404 | tech4th_ib   |              5 |
+| 1445146976971 |       404 | technorth_ib |             46 |
+| 1445147029062 |       404 | technorth_ib |              9 |
+| 1445147100996 |       404 | tranhub_f    |             82 |
+| 1445147144559 |       404 | tranhub_f    |              1 |
+| 1445147217987 |       404 | creccent_ib  |             59 |
+| 1445147277480 |       404 | creccent_ib  |             31 |
+| 1445147334070 |       404 | fitthall_a   |             59 |
+| 1445147396141 |       404 | 8thhemp      |            307 |
+| 1445147459617 |       404 | 8thhemp      |            247 |
+| 1445147518289 |       404 | 8thhemp      |            188 |
+| 1445147577278 |       404 | 8thhemp      |            127 |
+| 1445147637655 |       404 | 8thhemp      |             67 |
+| 1445147697286 |       404 | 8thhemp      |              3 |
+| 1445147758506 |       404 | creccent_ob  |             26 |
+| 1445147815046 |       404 | tranhub_b    |             66 |
+| 1445147873662 |       404 | tranhub_b    |             13 |
+| 1445147935316 |       404 | technorth_ob |             83 |
+| 1445147994619 |       404 | technorth_ob |             19 |
+| 1445148049776 |       404 | tech4th_ob   |             35 |
+| 1445148119832 |       404 | cloucomm     |            415 |
+| 1445148169648 |       404 | cloucomm     |            355 |
+| 1445148295463 |       404 | cloucomm     |            235 |
+| 1445148359635 |       404 | cloucomm     |            175 |
+| 1445148410163 |       404 | cloucomm     |            115 |
+| 1445148476989 |       404 | cloucomm     |           1856 |
+| 1445148530612 |       404 | tech4th_ib   |             48 |
+| 1445148598374 |       404 | tech4th_ib   |              2 |
+| 1445148657401 |       404 | technorth_ib |             30 |
+| 1445148711708 |       404 | tranhub_f    |             95 |
+| 1445148771571 |       404 | creccent_ib  |             73 |
+| 1445148831537 |       404 | creccent_ib  |             54 |
+| 1445148891738 |       404 | creccent_ib  |              4 |
+| 1445148956721 |       404 | fitthall_a   |             52 |
+| 1445149018220 |       404 | 8thhemp      |            487 |
+| 1445149077400 |       404 | 8thhemp      |            427 |
+| 1445149132705 |       404 | 8thhemp      |            368 |
+| 1445149193342 |       404 | 8thhemp      |            307 |
+| 1445149260353 |       404 | 8thhemp      |            247 |
+| 1445149318668 |       404 | 8thhemp      |            187 |
+| 1445149368570 |       404 | 8thhemp      |            129 |
+| 1445149438093 |       404 | 8thhemp      |             20 |
+| 1445149552785 |       404 | tranhub_b    |             76 |
+| 1445149613828 |       404 | tranhub_b    |             43 |
+| 1445149673507 |       404 | technorth_ob |            112 |
+| 1445149738294 |       404 | technorth_ob |             88 |
+| 1445149789360 |       404 | technorth_ob |             92 |
+| 1445149855248 |       404 | technorth_ob |             85 |
+| 1445149909828 |       404 | technorth_ob |             34 |
+| 1445149980232 |       404 | technorth_ob |             11 |
+| 1445150040728 |       404 | technorth_ob |              0 |
+| 1445150100031 |       404 | cloucomm     |            236 |
+| 1445150161376 |       404 | cloucomm     |            177 |
+| 1445150214950 |       404 | cloucomm     |            116 |
+| 1445150281115 |       404 | cloucomm     |             55 |
+| 1445150326811 |       404 | tech4th_ib   |             66 |
+| 1445150385767 |       404 | tech4th_ib   |             72 |
+| 1445150455887 |       404 | tech4th_ib   |             67 |
+| 1445150519626 |       404 | tech4th_ib   |             71 |
+| 1445150577176 |       404 | tech4th_ib   |             71 |
+| 1445150636240 |       404 | tech4th_ib   |             65 |
+| 1445150696091 |       404 | tech4th_ib   |             65 |
+| 1445150756896 |       404 | tech4th_ib   |             71 |
+| 1445150817920 |       404 | tech4th_ib   |             71 |
+| 1445150875257 |       404 | tech4th_ib   |              0 |
+| 1445150937979 |       404 | technorth_ib |             44 |
+| 1445151000821 |       404 | tranhub_f    |            116 |
+| 1445151060087 |       404 | tranhub_f    |              0 |
+| 1445151114975 |       404 | creccent_ib  |             56 |
+| 1445151175345 |       404 | fitthall_a   |             74 |
+| 1445151236370 |       404 | fitthall_a   |             25 |
+| 1445151299219 |       404 | 8thhemp      |             63 |
+| 1445151355805 |       404 | 8thhemp      |             19 |
++---------------+-----------+--------------+----------------+
+83 rows in set (0.00 sec)
