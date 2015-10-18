@@ -1,20 +1,26 @@
 <?php
-$host = "159.203.104.66";
-$user = "root";
-$pass = "appathon;
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
 
-$databaseName = "rambler";
-$con=mysql_connect($host, $user, $pass);
-$tableName = "rambler";
-if(!$con)
-{
-    die('Could not connect: ' . mysql_error());
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-$dbs = mysql_select_db($databaseName, $con);
+$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$result = $conn->query($sql);
 
-$result = mysql_query("SELECT * FROM $tableName");
-$array = mysql_fetch_row($result);
-
-echo json_encode($array);
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
 ?>

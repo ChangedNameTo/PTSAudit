@@ -131,14 +131,14 @@
                              die("Connection failed: " . $conn->connect_error);
                         }
 
-                        $sql = "SELECT id, firstname, lastname FROM MyGuests";
+                        $sql = "SELECT epochKey, busNumber, nextStop, timeToNextStop FROM rambler";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
                              echo "<table><tr><th>ID</th><th>Name</th></tr>";
                              // output data of each row
-                             while($row = $result->fetch_assoc()) {
-                                 echo "<tr><td>" . $row["id"]. "</td><td>" . $row["firstname"]. " " . $row["lastname"]. "</td></tr>";
+                             while($row = $result=fetch_assoc()) {
+                                 echo "<tr><td>" . $row["epochKey"]. "</td><td>" . $row["busNumber"]. "</td></tr>" . $row["nextStop"]. "</td></tr>". $row["timeToNextStop"]. "</td></tr>";
                              }
                              echo "</table>";
                         } else {
@@ -147,8 +147,6 @@
 
                         $conn->close();
                         ?>
-                        </tr>
-                    </table>
                 </div>
                 <!-- /.box-body -->
             </div>
