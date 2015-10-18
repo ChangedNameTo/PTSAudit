@@ -126,148 +126,54 @@
             <!-- /.row -->
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-xs-12">
             <div class="box">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Monthly Recap Report</h3>
+                <div class="box-header">
+                    <h3 style = "text-align: center; margin: 1px; font-weight: bold">List of Bus Routes</h3>
 
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                        </button>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-wrench"></i></button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                    </div>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-body">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <p class="text-center">
-                                <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
-                            </p>
-
-                            <div class="chart">
-                                <!-- Sales Chart Canvas -->
-                                <canvas id="salesChart" style="height: 180px;"></canvas>
-                            </div>
-                            <!-- /.chart-responsive -->
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-md-4">
-                            <p class="text-center">
-                                <strong>Goal Completion</strong>
-                            </p>
-
-                            <div class="progress-group">
-                                <span class="progress-text">Add Products to Cart</span>
-                                <span class="progress-number"><b>160</b>/200</span>
-
-                                <div class="progress sm">
-                                    <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <!-- /.progress-group -->
-                            <div class="progress-group">
-                                <span class="progress-text">Complete Purchase</span>
-                                <span class="progress-number"><b>310</b>/400</span>
-
-                                <div class="progress sm">
-                                    <div class="progress-bar progress-bar-red" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <!-- /.progress-group -->
-                            <div class="progress-group">
-                                <span class="progress-text">Visit Premium Page</span>
-                                <span class="progress-number"><b>480</b>/800</span>
-
-                                <div class="progress sm">
-                                    <div class="progress-bar progress-bar-green" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <!-- /.progress-group -->
-                            <div class="progress-group">
-                                <span class="progress-text">Send Inquiries</span>
-                                <span class="progress-number"><b>250</b>/500</span>
-
-                                <div class="progress sm">
-                                    <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <!-- /.progress-group -->
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Bus Color</th>
+                            <th>Route</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>183</td>
+                            <td>John Doe</td>
+                            <td><span class="label label-success">On-Time</span></td>
+                        </tr>
+                        <tr>
+                            <td>219</td>
+                            <td>Alexander Pierce</td>
+                            <td><span class="label label-warning">Delayed</span></td>
+                        </tr>
+                        <tr>
+                            <td>657</td>
+                            <td>Bob Doe</td>
+                            <td><span class="label label-success">On-Time</span></td>
+                        </tr>
+                        <tr>
+                            <td>175</td>
+                            <td>Mike Doe</td>
+                            <td><span class="label label-danger">Late</span></td>
+                        </tr>
+                    </table>
                 </div>
-                <!-- ./box-body -->
-                <div class="box-footer">
-                    <div class="row">
-                        <div class="col-sm-3 col-xs-6">
-                            <div class="description-block border-right">
-                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                                <h5 class="description-header">$35,210.43</h5>
-                                <span class="description-text">TOTAL REVENUE</span>
-                            </div>
-                            <!-- /.description-block -->
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-3 col-xs-6">
-                            <div class="description-block border-right">
-                                <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                                <h5 class="description-header">$10,390.90</h5>
-                                <span class="description-text">TOTAL COST</span>
-                            </div>
-                            <!-- /.description-block -->
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-3 col-xs-6">
-                            <div class="description-block border-right">
-                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                                <h5 class="description-header">$24,813.53</h5>
-                                <span class="description-text">TOTAL PROFIT</span>
-                            </div>
-                            <!-- /.description-block -->
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-3 col-xs-6">
-                            <div class="description-block">
-                                <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
-                                <h5 class="description-header">1200</h5>
-                                <span class="description-text">GOAL COMPLETIONS</span>
-                            </div>
-                            <!-- /.description-block -->
-                        </div>
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <!-- /.box-footer -->
+                <!-- /.box-body -->
             </div>
             <!-- /.box -->
         </div>
-        <!-- /.col -->
     </div>
-    <!-- /.row -->
 
     <!-- Main row -->
     <h1>
-        Flot Charts
+        <a name = "LiveStream"></a>
+        Live Stream
         <!--<small>preview sample</small>-->
     </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Charts</a></li>
-        <li class="active">Flot</li>
-    </ol>
     <!-- Charts -->
     <div class="row">
         <div class="col-xs-12">
@@ -276,7 +182,7 @@
                 <div class="box-header with-border">
                     <i class="fa fa-bar-chart-o"></i>
 
-                    <h3 class="box-title">Interactive Area Chart</h3>
+                    <h3 class="box-title">Bus Data</h3>
 
                     <div class="box-tools pull-right">
                         Real time
@@ -320,7 +226,7 @@
 <!-- ChartJS 1.0.1 -->
 <script src="plugins/chartjs/Chart.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard2.js"></script>-->
+<!--<script src="dist/js/pages/dashboard2.js"></script>&ndash;&gt;-->
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <!-- FLOT CHARTS -->
@@ -331,6 +237,8 @@
 <script src="plugins/flot/jquery.flot.pie.min.js"></script>
 <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
 <script src="plugins/flot/jquery.flot.categories.min.js"></script>
+<!-- FLOT AXISLABEL PLUGIN - Used to make axis labels -->
+<script src = "plugins/flot/jquery.flot.axislabels.js"></script>
 <!-- Page script -->
 <script>
     $(function () {
@@ -370,6 +278,21 @@
 
             return res;
         }
+        var options = {
+            axisLabels: {
+                show: true
+            },
+            xaxes: [{
+                axisLabel: 'foo',
+            }],
+            yaxes: [{
+                position: 'left',
+                axisLabel: 'bar',
+            }, {
+                position: 'right',
+                axisLabel: 'bleem'
+            }]
+        };
 
         var interactive_plot = $.plot("#interactive", [getRandomData()], {
             grid: {
@@ -388,20 +311,20 @@
             yaxis: {
                 min: 0,
                 max: 100,
-                show: true
+                show: true,
             },
             xaxis: {
                 show: true
             }
         });
 
-        var updateInterval = 500; //Fetch data ever x milliseconds
+        var updateInterval = 500; //Fetch data every x milliseconds
         var realtime = "on"; //If == to on then fetch data every x seconds. else stop fetching
         function update() {
 
             interactive_plot.setData([getRandomData()]);
 
-            // Since the axes don't change, we don't need to call plot.setupGrid()
+            // Since the axes doesn't change, we don't need to call plot.setupGrid()
             interactive_plot.draw();
             if (realtime === "on")
             setTimeout(update, updateInterval);
