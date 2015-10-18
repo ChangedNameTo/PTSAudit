@@ -15,7 +15,7 @@
     <!-- jvectormap -->
     <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="dist/css/AdminLTE.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
@@ -80,14 +80,9 @@
                     </ul>
                 </li>
                 <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-table"></i> <span>Contact Us!</span>
-                        <i class="fa fa-angle-left pull-right"></i>
+                    <a href="#contact">
+                        <i class="fa fa-info"></i> <span>Contact Us!</span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                        <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
-                    </ul>
                 </li>
             </ul>
         </section>
@@ -99,7 +94,9 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1 style = "text-align: center; position: relative; font-size: 4.25em">
-                <strong>Welcome</strong>
+                <strong>
+                    <a name = "top"></a>
+                    Welcome</strong>
                 <small>Created for Appthon</small>
             </h1>
         </section>
@@ -156,7 +153,7 @@
     </div>
 
     <!-- Main row -->
-    <h1>
+    <h1 style = "text-align: center">
         <a name = "liveStream"></a>
         Live Stream
         <!--<small>preview sample</small>-->
@@ -191,6 +188,37 @@
     </div>
     <!-- /.row -->
 
+
+    <h1 style = "text-align: center">
+        <a name = "contact"></a>
+        Send Us A Message!
+        <!--<small>preview sample</small>-->
+    </h1>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header with-border contactUs">
+                    <p>
+                        If you're curious about what we do or would simply like to
+                        get in touch, please email us at
+                    </p>
+                    <script language = "JavaScript">
+
+                        var username = "mchen315";
+                        var hostname = "gatech.edu";
+                        var linktext = username + "@" + hostname ;
+                        document.write("<a STYLE=\"color: rgb(30,144,255)\" href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a> </p>");
+
+                    </script>
+
+                </div>
+                <!-- /.box-body-->
+            </div>
+            <!-- /.box -->
+
+        </div>
+        <!-- /.col -->
+    </div>
 
 
     <!-- ./wrapper -->
