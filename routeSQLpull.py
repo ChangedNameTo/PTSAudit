@@ -7,11 +7,6 @@ import sys
 from passwords import *
 
 class RouteSQLpull:
-    #Blue Route Pull
-    #Red
-    #Trolley
-    #Green
-
     ##################
     #Global Functions#
     ##################
@@ -104,6 +99,114 @@ class RouteSQLpull:
             cnx.commit()
         cnx.close()
 
+    #Trolley Pull
+    def trolleyRoute(self):
+        cnx = mysql.connector.connect(user = hid_user, password = hid_password, database = 'trolley')
+        cursor = cnx.cursor()
+
+        stopsArray = {}
+        timeToNextStop = 0
+
+        stopsArray = self.getStopsFromRoute("trolley")
+        buses = self.activeBuses("trolley")
+
+        for bus in buses:
+            epochKey = self.getEpochKey(bus, "trolley")
+            nextStop = self.findNextStop(stopsArray)
+            timeToNextStop = self.timeToNextStop(nextStop, bus, "trolley")
+            busNumber = bus
+
+            add_data = ("INSERT INTO trolley "
+                "(epochKey, busNumber, nextStop, timeToNextStop)"
+                "VALUES (%s, %s, %s, %s)")
+            data_bus = (epochKey, busNumber, nextStop, timeToNextStop)
+
+            cursor.execute(add_data, data_bus)
+            cnx.commit()
+        cnx.close()
+
+    #Red Pull
+    def redRoute(self):
+        cnx = mysql.connector.connect(user = hid_user, password = hid_password, database = 'red')
+        cursor = cnx.cursor()
+
+        stopsArray = {}
+        timeToNextStop = 0
+
+        stopsArray = self.getStopsFromRoute("red")
+        buses = self.activeBuses("red")
+
+        for bus in buses:
+            epochKey = self.getEpochKey(bus, "red")
+            nextStop = self.findNextStop(stopsArray)
+            timeToNextStop = self.timeToNextStop(nextStop, bus, "red")
+            busNumber = bus
+
+            add_data = ("INSERT INTO red "
+                "(epochKey, busNumber, nextStop, timeToNextStop)"
+                "VALUES (%s, %s, %s, %s)")
+            data_bus = (epochKey, busNumber, nextStop, timeToNextStop)
+
+            cursor.execute(add_data, data_bus)
+            cnx.commit()
+        cnx.close()
+
+    #Blue Pull
+    def blueRoute(self):
+        cnx = mysql.connector.connect(user = hid_user, password = hid_password, database = 'blue')
+        cursor = cnx.cursor()
+
+        stopsArray = {}
+        timeToNextStop = 0
+
+        stopsArray = self.getStopsFromRoute("blue")
+        buses = self.activeBuses("blue")
+
+        for bus in buses:
+            epochKey = self.getEpochKey(bus, "blue")
+            nextStop = self.findNextStop(stopsArray)
+            timeToNextStop = self.timeToNextStop(nextStop, bus, "blue")
+            busNumber = bus
+
+            add_data = ("INSERT INTO blue "
+                "(epochKey, busNumber, nextStop, timeToNextStop)"
+                "VALUES (%s, %s, %s, %s)")
+            data_bus = (epochKey, busNumber, nextStop, timeToNextStop)
+
+            cursor.execute(add_data, data_bus)
+            cnx.commit()
+        cnx.close()
+
+    #Green Pull
+    def greenRoute(self):
+        cnx = mysql.connector.connect(user = hid_user, password = hid_password, database = 'green')
+        cursor = cnx.cursor()
+
+        stopsArray = {}
+        timeToNextStop = 0
+
+        stopsArray = self.getStopsFromRoute("green")
+        buses = self.activeBuses("green")
+
+        for bus in buses:
+            epochKey = self.getEpochKey(bus, "green")
+            nextStop = self.findNextStop(stopsArray)
+            timeToNextStop = self.timeToNextStop(nextStop, bus, "green")
+            busNumber = bus
+
+            add_data = ("INSERT INTO green "
+                "(epochKey, busNumber, nextStop, timeToNextStop)"
+                "VALUES (%s, %s, %s, %s)")
+            data_bus = (epochKey, busNumber, nextStop, timeToNextStop)
+
+            cursor.execute(add_data, data_bus)
+            cnx.commit()
+        cnx.close()
+
     #Main
 routeSQLpull = RouteSQLpull()
 routeSQLpull.ramblerRoute()
+routeSQLpull.redRoute()
+routeSQLpull.blueRoute()
+routeSQLpull.greenRoute()
+routeSQLpull.trolleyRoute()
