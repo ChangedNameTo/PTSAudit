@@ -50,15 +50,15 @@ class routeSQLpull(object):
         return [int(p.getAttribute("seconds")) for p in predictions]
 
     def findNextStop(stops):
-    nextStop
-    timeToNextStop = sys.maxint
-    for stop in stops:
-        times = {}
-        times = getBusTimes(night, stop)
-        if times[0] < timeToNextStop:
-            timeToNextStop = times[0]
-            nextStop = stop
-    return nextStop
+        nextStop
+        timeToNextStop = sys.maxint
+        for stop in stops:
+            times = {}
+            times = getBusTimes(night, stop)
+            if times[0] < timeToNextStop:
+                timeToNextStop = times[0]
+                nextStop = stop
+        return nextStop
 
     def activeBuses(route):
         from urllib import urlopen as open
@@ -91,20 +91,20 @@ class routeSQLpull(object):
                 return int(p.getAttribute("seconds"))
 
     def stops(route):
-    from urllib import urlopen as open
-    from xml.dom.minidom import parse
+        from urllib import urlopen as open
+        from xml.dom.minidom import parse
 
-    url = "https://gtbuses.herokuapp.com/routeConfig"
-    for r in parse(open(url)).getElementsByTagName("route"):
-        if r.getAttribute("tag") ==  route:
-            stops = r.getElementsByTagName("stop")
-            result = {}
+        url = "https://gtbuses.herokuapp.com/routeConfig"
+        for r in parse(open(url)).getElementsByTagName("route"):
+            if r.getAttribute("tag") ==  route:
+                stops = r.getElementsByTagName("stop")
+                result = {}
 
-            for stop in stops:
-                tag = str(stop.getAttribute("tag"))
-                title = str(stop.getAttribute("title"))
+                for stop in stops:
+                    tag = str(stop.getAttribute("tag"))
+                    title = str(stop.getAttribute("title"))
 
-                if tag not in result:
-                    result[tag] = title
+                    if tag not in result:
+                        result[tag] = title
 
-            return result
+                return result
