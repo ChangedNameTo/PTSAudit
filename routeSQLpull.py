@@ -28,12 +28,9 @@ class RouteSQLpull:
 
     def findNextStop(self, stops):
         timeToNextStop = sys.maxint
-        print len(stops)
         for stop in stops:
-            print stop
             times = []
             times = self.getBusTimes("night", stop)
-            print len(times)
             if times[0] < timeToNextStop:
                 timeToNextStop = times[0]
                 nextStop = stop
@@ -52,22 +49,21 @@ class RouteSQLpull:
         from xml.dom.minidom import parse
 
         url = "https://gtbuses.herokuapp.com/locations/" + route
-        predictions = parse(open(url)).getElementsByTagName("prediction")
+        predictions = parse(open(url)).getElementsByTagName("lastTime")
 
-        for p in predictions:
-            if p.getAttribute("vehicle") == bus:
-                return int(parse(open(url)).getElementsByTagName("lastTime").getAttribute("time"))
+        if predictions[0] != None:
+            return predictions[0].getAttribute("time")
 
     def timeToNextStop(self, nextStop, bus, route):
         from urllib import urlopen as open
         from xml.dom.minidom import parse
 
-        url = "https://gtbuses.herokuapp.com/multiPredictions?stops=" + route + "|" + stop
+        url = "https://gtbuses.herokuapp.com/multiPredictions?stops=" + route + "|" + nextStop
         predictions = parse(open(url)).getElementsByTagName("prediction")
 
         for p in predictions:
-            if p.getAttribute("vehicle") == bus:
-                return int(p.getAttribute("seconds"))
+            if int(p.getAttribute("vehicle")) == int(bus):
+                return p.getAttribute("seconds")
 
     def getStopsFromRoute(self, route):
         from urllib import urlopen as open
@@ -79,7 +75,7 @@ class RouteSQLpull:
         result = {}
 
         for p in predictions:
-            result[p.getAttribute("stop_Tag")] = p.getAttribute("stopTitle")
+            result[p.getAttribute("stopTag")] = p.getAttribute("stopTitle")
         return result
 
     #Rambler Pull
@@ -88,6 +84,7 @@ class RouteSQLpull:
         cursor = cnx.cursor()
 
         stopsArray = {}
+        timeToNextStop = 0
 
         stopsArray = self.getStopsFromRoute("night")
         buses = self.activeBuses("night")
@@ -95,11 +92,13 @@ class RouteSQLpull:
         for bus in buses:
             epochKey = self.getEpochKey(bus, "night")
             nextStop = self.findNextStop(stopsArray)
-            timeToNextStop = timeToNextStop(nextStop, bus, night)
+            timeToNextStop = self.timeToNextStop(nextStop, bus, "night")
+            busNumber = bus
 
             add_data = ("INSERT INTO rambler "
-                "(epochKey, bus, nextStop, timeToNextStop)")
-            data_bus = (epochKey, bus, nextStop, timeToNextStop)
+                "(epochKey, busNumber, nextStop, timeToNextStop)"
+                "VALUES (%s, %s, %s, %s)")
+            data_bus = (epochKey, busNumber, nextStop, timeToNextStop)
 
             cursor.execute(add_data, data_bus)
             cnx.commit()
