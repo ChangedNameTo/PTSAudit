@@ -256,6 +256,22 @@
 <script src = "plugins/flot/jquery.flot.axislabels.js"></script>
 <!-- Page script -->
 <script>
+$(document).ready(function() {
+        $.ajax({
+            type: "GET",
+            url: "retrieval.php",
+            data: "",
+            dataType: "json",
+            success: function(data) {
+                var id = data[0];
+                var vname = data[1];
+
+                $('#output').html("<b>id: </b>"+id+"<b> name: </b>"+vname);
+            }
+        });
+    });
+</script>
+<script>
     $(function () {
         /*
          * Flot Interactive Chart
